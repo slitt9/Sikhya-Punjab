@@ -79,23 +79,13 @@ const HISTORICAL_EVENTS = [
       category: 'Historical'
     }
   ];
-  
-  const categoryColors = {
-    Modern: '#FF6B6B',
-    Political: '#4ECDC4',
-    Historical: '#45B7D1',
-    Military: '#96CEB4',
-    Religious: '#FFEEAD',
-    Economic: '#D4A5A5'
-  };
 
+// Line 83
 const categoryColors = {
-  Modern: '#FF6B6B',
-  Political: '#4ECDC4',
-  Historical: '#45B7D1',
-  Military: '#96CEB4',
-  Religious: '#FFEEAD',
-  Economic: '#D4A5A5'
+  // Category colors defined here
+  category1: '#ff0000',
+  category2: '#00ff00',
+  category3: '#0000ff',
 };
 
 const Pin = ({ position, onClick, isActive }) => {

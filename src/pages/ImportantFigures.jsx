@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import { useGesture } from '@use-gesture/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSpring, animated } from '@react-spring/web';
-import { useGesture } from 'react-use-gesture';
 import figuresData from './important_punjabi_figures.json';
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
