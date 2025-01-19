@@ -51,11 +51,59 @@
 .subtitle {
   font-size: 1.2rem;
   margin-top: 1rem;
-  color: #888;
+  color: #ffffff;
+}
+
+/* Center SakhiOfTheDay component horizontally */
+.sakhi-container {
+  max-width: 800px; /* Limit the width for readability */
+  margin: 0 auto; /* Horizontally center the container */
+  text-align: center; /* Center the text inside the container */
+  padding: 1rem; /* Add some padding for spacing */
 }
 
 /* Space under navbar for content proper positioning */
+/* Panel for the header (title and subtitle) */
+.header-panel {
+  width: 100%;
+  background: linear-gradient(135deg, #0074D9, #FF851B); /* Punjab-inspired colors */
+  color: #ffffff;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-radius:0px;
+  margin: 0rem auto;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 1);
+}
+
+/* Panel for the Sakhi of the Day */
+.sakhi-panel {
+  background: #ffffff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  margin: 1rem auto;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid #1976d2; /* Accent-line for a modern touch */
+  color: #333; /* Dark text color for readability */
+}
+
+/* Styling for Sakhi card inside the panel */
+.sakhi-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #1976d2; /* Blue for consistency with the accent */
+}
+
+.sakhi-card p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Add spacing between main sections */
 main {
-  margin-top: 1.5rem; /* Adds space below sticky navbar */
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Spacing between panels */
 }

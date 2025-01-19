@@ -11,6 +11,8 @@
     margin: 0; /* No additional margins */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Aesthetic shadow effect */
     border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Clean border for separation */
+    overflow: hidden;
+    height: 60px; /* Set a fixed height for the navbar */
 }
 
 .navbar .logo a {
@@ -19,6 +21,22 @@
     font-weight: bold;
     text-decoration: none;
 }
+
+.logo-image {
+    height: 100px; /* Adjust the height of the logo to fit the navbar */
+    width: auto; /* Ensure the width scales proportionally */
+    max-height: 100%; /* Prevent it from exceeding the navbar's height */
+    display: block; /* Ensure it behaves like a block element */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth hover transition */
+    cursor: pointer; /* Show a "hand" cursor style */
+
+}
+
+.logo-image:hover {
+    transform: scale(1.1); /* Slightly enlarges the logo */
+    opacity: 0.9; /* Slightly reduce opacity for a subtle effect */
+}
+
 
 .navbar ul {
     list-style-type: none;

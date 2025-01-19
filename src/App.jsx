@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import SakhiOfTheDay from "./components/SakhiOfTheDay"; // Home Page Content
@@ -28,7 +28,8 @@ const App = () => {
                     path="/"
                     element={
                         <>
-                            <header className="header">
+                            {/* Header Panel for Title */}
+                            <div className="header-panel">
                                 <h1
                                     className={`animated-title ${
                                         showPunjabiTitle ? "punjabi-show" : "english-show"
@@ -37,12 +38,14 @@ const App = () => {
                                     <span className="english">Sikhya Punjab</span>
                                     <span className="punjabi">ਸਿੱਖਿਆ ਪੰਜਾਬ</span>
                                 </h1>
-                                <p className="subtitle">
-                                    Preserving the Rich Culture and Heritage of Punjab
-                                </p>
-                            </header>
+                                <p className="subtitle">Preserving the Rich Culture and Heritage of Punjab</p>
+                            </div>
+
+                            {/* Sakhi of the Day Panel */}
                             <main>
-                                <SakhiOfTheDay />
+                                <div className="sakhi-panel">
+                                    <SakhiOfTheDay />
+                                </div>
                             </main>
                         </>
                     }

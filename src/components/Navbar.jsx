@@ -1,12 +1,17 @@
 
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import logoImg from "../assets/sikhyapunjablogo.png"; // Import your logo image
+
 
 const Navbar = () => {
   return (
       <nav className="navbar">
         <div className="logo">
-          <Link to="/">Sikhya Punjab</Link>
+          <Link to="/">
+            <img src={logoImg} alt="Sikhya Punjab Logo" className="logo-image" />
+          </Link>
+
         </div>
         <ul>
           <li>
