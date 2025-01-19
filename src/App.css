@@ -7,6 +7,7 @@
 
 /* Fixed animated title height and ensured no text cutoff */
 .animated-title {
+  font-family: 'Manrope', serif; /* Dancing Script applied */
   font-size: 3rem;
   position: relative;
   height: 4.5rem; /* Slightly increased height for Punjabi font */
@@ -61,6 +62,54 @@
   text-align: center; /* Center the text inside the container */
   padding: 1rem; /* Add some padding for spacing */
 }
+
+#sakhi-section {
+  min-height: 100vh; /* Full screen height for consistency */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  text-align: center;
+  padding: 2rem;
+  animation: fadeIn 0.8s ease-in-out; /* Optional: Add fade-in animation */
+  opacity: 0; /* Initially hidden */
+  transform: translateY(100px); /* Slightly move downward initially */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
+
+}
+
+#sakhi-section.show-section {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Move to its normal position */
+}
+
+
+#sakhi-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1976d2; /* A nice accent color */
+}
+
+#sakhi-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #444;
+  max-width: 700px; /* Limit width for better readability */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .home-container {
   position: relative; /* Allows content to properly layer over the background */

@@ -2,155 +2,155 @@
   "Religious Leaders": [
     {
       "name": "Guru Nanak Dev Ji",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/33/Guru_Nanak_Dev_Ji.jpg",
+      "image": "https://www.sikhiwiki.org/images/f/fb/Guru_Nanak_Dev_ji.jpg",
       "description": "Founder of Sikhism and the first Sikh Guru."
     },
     {
       "name": "Guru Angad Dev Ji",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Guru_Angad_Dev.jpg",
+      "image": "https://www.sikhiwiki.org/images/d/d5/Guru_Angad_Dev_Ji.jpg",
       "description": "Second Sikh Guru, known for creating the Gurmukhi script."
     },
     {
       "name": "Guru Amar Das Ji",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Guru_Amar_Das.jpg",
+      "image": "https://www.sikhiwiki.org/images/0/0c/Guru_Amar_Das_Ji.jpg",
       "description": "Third Sikh Guru, known for establishing Langar (community kitchen)."
     },
     {
       "name": "Guru Ram Das Ji",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Guru_Ram_Das.jpg",
+      "image": "https://www.sikhiwiki.org/images/d/de/Guru_Ram_Das_Ji.jpg",
       "description": "Fourth Sikh Guru, founder of Amritsar."
     },
     {
       "name": "Guru Arjan Dev Ji",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Guru_Arjan_Dev.jpg",
+      "image": "https://www.sikhiwiki.org/images/c/c6/Guru_Arjan_Dev_Ji.jpg",
       "description": "Fifth Sikh Guru and compiler of the Adi Granth."
     },
     {
       "name": "Guru Hargobind Ji",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Guru_Hargobind.jpg",
+      "image": "https://www.sikhiwiki.org/images/8/8b/Guru_Hargobind_Ji.jpg",
       "description": "Sixth Sikh Guru, known for militarizing Sikhs."
     },
     {
       "name": "Guru Har Rai Ji",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Guru_Har_Rai.jpg",
+      "image": "https://www.sikhiwiki.org/images/4/43/Guru_Har_Rai_Ji.jpg",
       "description": "Seventh Sikh Guru, focused on compassion and healing."
     },
     {
       "name": "Guru Har Krishan Ji",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Guru_Har_Krishan.jpg",
+      "image": "https://www.sikhiwiki.org/images/d/db/Guru_Harkrishan_Ji.jpg",
       "description": "Eighth Sikh Guru, known as the child Guru."
     },
     {
       "name": "Guru Tegh Bahadur Ji",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Guru_Tegh_Bahadur.jpg",
+      "image": "https://www.sikhiwiki.org/images/8/8f/Guru_Tegh_Bahadur_Ji.jpg",
       "description": "Ninth Sikh Guru, martyred for protecting religious freedom."
     },
     {
       "name": "Guru Gobind Singh Ji",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Guru_Gobind_Singh.jpg",
+      "image": "https://www.sikhiwiki.org/images/5/52/Guru_Gobind_Singh_Ji.jpg",
       "description": "Tenth Sikh Guru, founder of the Khalsa."
     }
   ],
   "Freedom Fighters": [
     {
       "name": "Bhagat Singh",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Bhagat_Singh_1929.jpg",
+      "image": "https://bhagatsingh.in/images/bhagat_singh_photo.jpg",
       "description": "Revolutionary freedom fighter and martyr."
     },
     {
       "name": "Udham Singh",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Shaheed_Udham_Singh.jpg",
+      "image": "https://www.punjabdata.com/Images/UdhamSingh.jpg",
       "description": "Assassinated Michael O'Dwyer to avenge the Jallianwala Bagh massacre."
     },
     {
       "name": "Kartar Singh Sarabha",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Kartar_Singh_Sarabha.jpg",
+      "image": "http://www.sikhinstitute.org/images/kartar_singh_sarabha.jpg",
       "description": "Member of the Ghadar Party and early freedom fighter."
     },
     {
       "name": "Lala Lajpat Rai",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Lala_Lajpat_Rai.jpg",
+      "image": "https://www.culturalindia.net/iliimages/Lala-Lajpat-Rai-ili-136-img-3.jpg",
       "description": "Leader of the Indian independence movement, known as Punjab Kesari."
     },
     {
       "name": "Sohan Singh Bhakna",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Sohan_Singh_Bhakna.jpg",
+      "image": "http://www.sikhinstitute.org/images/sohan_singh_bhakna.jpg",
       "description": "Founding leader of the Ghadar Party."
     }
   ],
   "Rulers and Warriors": [
     {
       "name": "Maharaja Ranjit Singh",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Maharaja_Ranjit_Singh.jpg",
+      "image": "https://www.sikhiwiki.org/images/0/03/MaharajaRanjitSingh.jpg",
       "description": "Founder of the Sikh Empire, known as the 'Lion of Punjab.'"
     },
     {
       "name": "Hari Singh Nalwa",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Hari_Singh_Nalwa.jpg",
+      "image": "https://www.sikhiwiki.org/images/e/e3/Hari_singh_nalwa_2.jpg",
       "description": "Commander-in-chief of the Sikh Khalsa Army under Maharaja Ranjit Singh."
     },
     {
       "name": "Jassa Singh Ahluwalia",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Jassa_Singh_Ahluwalia.jpg",
+      "image": "https://www.sikhiwiki.org/images/7/70/Jassa_Singh_Ahluwalia_-_Ahluwalia_Misal.jpg",
       "description": "Sikh leader and founder of the Ahluwalia Misal."
     },
     {
       "name": "Banda Singh Bahadur",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Banda_Singh_Bahadur.jpg",
+      "image": "https://www.discoversikhism.com/images/sikh_gurus/banda_singh_bahadur_4.jpg",
       "description": "Sikh warrior and leader who established Sikh rule in Punjab."
     },
     {
       "name": "Mai Bhago",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Mai_Bhago.jpg",
+      "image": "https://www.discoversikhism.com/images/sikh_women/mai_bhago_3.jpg",
       "description": "Female Sikh warrior who led Sikh soldiers against the Mughals."
     }
   ],
   "Poets and Writers": [
     {
       "name": "Bulleh Shah",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Bulleh_Shah.jpg",
+      "image": "https://www.apnaorg.com/articles/majid/bulleh-shah.jpg",
       "description": "Sufi poet known for his spiritual and philosophical poetry."
     },
     {
       "name": "Waris Shah",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Waris_Shah.jpg",
+      "image": "https://www.apnaorg.com/gallery/waris-shah.jpg",
       "description": "Author of the Punjabi epic 'Heer Ranjha.'"
     },
     {
       "name": "Bhai Gurdas Ji",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Bhai_Gurdas.jpg",
+      "image": "https://www.sikhiwiki.org/images/f/f8/Bhai_Gurdas_Ji.jpg",
       "description": "Early Sikh scholar and poet, writer of Vaaran Bhai Gurdas."
     },
     {
       "name": "Shiv Kumar Batalvi",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/Shiv_Kumar_Batalvi.jpg",
+      "image": "https://www.apnaorg.com/articles/tribune/shiv-kumar-batalvi.jpg",
       "description": "Modern Punjabi poet known for his romantic and melancholic poetry."
     },
     {
       "name": "Amrita Pritam",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/11/Amrita_Pritam.jpg",
+      "image": "https://www.apnaorg.com/punjabi/virsa/graphics/amrita-pritam.jpg",
       "description": "Renowned Punjabi writer and poet, author of Pinjar."
     }
   ],
   "Prominent Women": [
     {
       "name": "Rani Jindan (Maharani Jind Kaur)",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Rani_Jindan.jpg",
+      "image": "https://www.sikhiwiki.org/images/6/66/Rani_Jindan_Jind_Kaur.jpg",
       "description": "Queen regent of the Sikh Empire and mother of Duleep Singh."
     },
     {
       "name": "Bibi Bhani Ji",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Bibi_Bhani.jpg",
+      "image": "https://www.sikhiwiki.org/images/b/ba/Bibi_BhaniJi.jpg",
       "description": "Daughter of Guru Amar Das Ji and mother of Guru Arjan Dev Ji."
     },
     {
       "name": "Bibi Nanaki Ji",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/42/Bibi_Nanaki.jpg",
+      "image": "https://www.sikhiwiki.org/images/9/9e/Bibi_Nanaki_ji.jpg",
       "description": "Elder sister of Guru Nanak Dev Ji, known for her support and devotion."
     },
     {
       "name": "Mai Bhago",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Mai_Bhago.jpg",
+      "image": "https://www.discoversikhism.com/images/sikh_women/mai_bhago_3.jpg",
       "description": "Female Sikh warrior who led Sikh soldiers against the Mughals."
     }
   ]

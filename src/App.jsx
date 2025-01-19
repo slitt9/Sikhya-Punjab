@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import SakhiOfTheDay from "./components/SakhiOfTheDay"; // Home Page Content
+import SakhiOfTheDay from "./SakhiOfTheDay"; // Home Page Content
 import LessonsSpeaking from "./pages/LessonsSpeaking";
 import LessonsReading from "./pages/LessonsReading";
 import ImportantFigures from "./pages/ImportantFigures";
 import ImportantEvents from "./pages/ImportantEvents";
 import ValuesEthics from "./pages/ValuesEthics";
 import "./App.css";
+import LandingSection from "./LandingSection.jsx";
 
 const App = () => {
     const [showPunjabiTitle, setShowPunjabiTitle] = useState(false);
@@ -27,31 +28,16 @@ const App = () => {
                 <Route
                     path="/"
                     element={
-                        <div className="home-container"> {/* New wrapper */}
-                            {/* Header Panel for Title */}
-                            <div className="header-panel">
-                                <h1
-                                    className={`animated-title ${
-                                        showPunjabiTitle ? "punjabi-show" : "english-show"
-                                    }`}
-                                >
-                                    <span className="english">Sikhya Punjab</span>
-                                    <span className="punjabi">ਸਿੱਖਿਆ ਪੰਜਾਬ</span>
-                                </h1>
-                                <p className="subtitle">
-                                    Preserving the Rich Culture and Heritage of Punjab
-                                </p>
-                            </div>
+                        <div className="home-container">
+                            {/* Landing Section */}
+                            <LandingSection />
 
-                            {/* Sakhi of the Day Panel */}
-                            <main>
-                                <div className="sakhi-panel">
-                                    <SakhiOfTheDay />
-                                </div>
-                            </main>
+                            {/* Sakhi of the Day Section */}
+                            <SakhiOfTheDay />
                         </div>
                     }
                 />
+
 
                 {/* Individual Pages */}
                 <Route path="/lessons-speaking" element={<LessonsSpeaking />} />
