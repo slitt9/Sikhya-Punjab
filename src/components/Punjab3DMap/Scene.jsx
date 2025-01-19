@@ -210,12 +210,9 @@ const Scene = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [hoveredEvent, setHoveredEvent] = useState(null);
   const mapRef = useRef();
-  const cameraRef = useRef();
 
-  // Load textures
-  const mapTexture = useTexture(punjabMapTexture);
-  const normalMap = useTexture('/textures/punjab-normal.jpg');
-  const heightMap = useTexture('/textures/punjab-height.jpg');
+  // Load single texture
+  const mapTexture = useTexture('/textures/punjab-map.jpg');
 
   // Spring animations for camera movement
   const { cameraPosition } = useSpring({
@@ -226,7 +223,6 @@ const Scene = () => {
   });
 
   useFrame((state) => {
-    // Smooth camera animation
     if (selectedEvent) {
       state.camera.position.lerp(new THREE.Vector3(...cameraPosition.get()), 0.05);
       state.camera.lookAt(selectedEvent.position[0], 0, selectedEvent.position[2]);
@@ -305,35 +301,15 @@ const Scene = () => {
         castShadow
       />
 
-      {/* Spotlight following selected event */}
-      {selectedEvent && (
-        <spotLight
-          position={[
-            selectedEvent.position[0],
-            5,
-            selectedEvent.position[2]
-          ]}
-          angle={0.3}
-          penumbra={0.8}
-          intensity={1.5}
-          color="#FFD700"
-          castShadow
-        />
-      )}
-
-      {/* Punjab map plane */}
+      {/* Punjab map plane with simplified material */}
       <mesh 
         ref={mapRef}
         rotation={[-Math.PI / 2, 0, 0]}
         receiveShadow
       >
-        <planeGeometry args={[10, 10, 128, 128]} />
+        <planeGeometry args={[10, 10]} />
         <meshStandardMaterial
           map={mapTexture}
-          normalMap={normalMap}
-          normalScale={[0.1, 0.1]}
-          displacementMap={heightMap}
-          displacementScale={0.2}
           roughness={0.8}
           metalness={0.2}
         />
