@@ -2,7 +2,6 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import Scene from './Scene';
-import LoadingScreen from './LoadingScreen';
 
 const Punjab3DMap = () => {
   return (
@@ -20,7 +19,6 @@ const Punjab3DMap = () => {
           />
         </Suspense>
       </Canvas>
-      <LoadingScreen />
     </div>
   );
 };

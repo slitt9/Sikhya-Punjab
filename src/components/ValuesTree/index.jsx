@@ -2,7 +2,6 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import Scene from './Scene';
-import LoadingScreen from '../LoadingScreen';
 
 const ValuesTree = () => {
   return (
@@ -20,7 +19,6 @@ const ValuesTree = () => {
           />
         </Suspense>
       </Canvas>
-      <LoadingScreen />
     </div>
   );
 };
