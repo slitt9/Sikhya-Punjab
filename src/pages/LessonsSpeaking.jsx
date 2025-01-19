@@ -74,11 +74,11 @@ const WaveformContainer = styled.div`
 `;
 
 const speakingData = [
-  { punjabi: 'ਸਤ ਸ੍ਰੀ ਅਕਾਲ', english: 'Sat Sri Akal', audio: 'audio/sat-sri-akal.mp3' },
-  { punjabi: 'ਧੰਨਵਾਦ', english: 'Dhanyavaad', audio: 'audio/dhanyavaad.mp3' },
-  { punjabi: 'ਕਿਵੇਂ ਹੋ', english: 'Kiven Ho', audio: 'audio/kiven-ho.mp3' },
-  { punjabi: 'ਠੀਕ ਹਾਂ', english: 'Theek Haan', audio: 'audio/theek-haan.mp3' },
-  { punjabi: 'ਮੈਂ ਪੰਜਾਬੀ ਸਿੱਖ ਰਿਹਾ ਹਾਂ', english: 'Main Punjabi Sikh Riha Haan', audio: 'audio/learning.mp3' },
+  { punjabi: 'ਸਤ ਸ੍ਰੀ ਅਕਾਲ', english: 'Sat Sri Akal', audio: '/audio/sat-sri-akal.mp3' },
+  { punjabi: 'ਧੰਨਵਾਦ', english: 'Dhanyavaad', audio: '/audio/dhanyavaad.mp3' },
+  { punjabi: 'ਕਿਵੇਂ ਹੋ', english: 'Kiven Ho', audio: '/audio/kiven-ho.mp3' },
+  { punjabi: 'ਠੀਕ ਹਾਂ', english: 'Theek Haan', audio: '/audio/theek-haan.mp3' },
+  { punjabi: 'ਮੈਂ ਪੰਜਾਬੀ ਸਿੱਖ ਰਿਹਾ ਹਾਂ', english: 'Main Punjabi Sikh Riha Haan', audio: '/audio/learning.mp3' },
 ];
 
 const LessonsSpeaking = () => {
@@ -177,9 +177,30 @@ const LessonsSpeaking = () => {
   };
 
   const playReference = () => {
-    const audio = new Audio(speakingData[currentWord].audio);
-    audio.play();
+    const audioFilePath = speakingData[currentWord].audio;
+
+    // Create an audio object
+    const audio = new Audio(audioFilePath);
+
+    // Debugging: Log the audio file path to verify it's correct
+    console.log('Attempting to play:', audioFilePath);
+
+    // Attempt to play the audio
+    audio.play()
+        .then(() => console.log('Audio is playing'))
+        .catch((err) => {
+          console.error('Error playing audio:', err);
+        });
   };
+
+  useEffect(() => {
+    // Preload all audio files on page load
+    speakingData.forEach((item) => {
+      const audio = new Audio(item.audio);
+      audio.preload = 'auto';
+    });
+  }, []);
+
 
   const handleNext = () => {
     if (currentWord < speakingData.length - 1) {

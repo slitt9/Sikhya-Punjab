@@ -62,6 +62,20 @@
   padding: 1rem; /* Add some padding for spacing */
 }
 
+.home-container {
+  position: relative; /* Allows content to properly layer over the background */
+  min-height: 100vh; /* Ensures background covers the full height of the page */
+  background: url("./khandabackground.png") no-repeat center center fixed;  /* 'background': Adds the image
+     'no-repeat': Prevents repeating
+     'center center': Ensures the image is centered
+     'fixed': Keeps the background in place during scroll */
+  background-size: cover; /* Scales the image to fill the container */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content (if necessary) */
+  padding: 2rem 1rem; /* Adds spacing around content */
+}
+
 /* Space under navbar for content proper positioning */
 /* Panel for the header (title and subtitle) */
 .header-panel {

@@ -24,10 +24,12 @@ const ScoreBoard = styled(motion.div)`
   padding: 1rem 2rem;
   border-radius: 15px;
   margin-bottom: 2rem;
+    color: #000000;
 `;
 
 const Card = styled(motion.div)`
   background: white;
+    color: #000000;
   padding: 2rem;
   border-radius: 15px;
   cursor: pointer;
@@ -50,6 +52,8 @@ const OptionsGrid = styled.div`
 const punjabiFontClass = {
     fontFamily: "'Mukta Mahee', sans-serif",
     fontSize: '2rem',
+    color: '#000000'
+
 };
 
 const lessonData = [

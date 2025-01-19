@@ -27,7 +27,7 @@ const App = () => {
                 <Route
                     path="/"
                     element={
-                        <>
+                        <div className="home-container"> {/* New wrapper */}
                             {/* Header Panel for Title */}
                             <div className="header-panel">
                                 <h1
@@ -38,7 +38,9 @@ const App = () => {
                                     <span className="english">Sikhya Punjab</span>
                                     <span className="punjabi">ਸਿੱਖਿਆ ਪੰਜਾਬ</span>
                                 </h1>
-                                <p className="subtitle">Preserving the Rich Culture and Heritage of Punjab</p>
+                                <p className="subtitle">
+                                    Preserving the Rich Culture and Heritage of Punjab
+                                </p>
                             </div>
 
                             {/* Sakhi of the Day Panel */}
@@ -47,9 +49,10 @@ const App = () => {
                                     <SakhiOfTheDay />
                                 </div>
                             </main>
-                        </>
+                        </div>
                     }
                 />
+
                 {/* Individual Pages */}
                 <Route path="/lessons-speaking" element={<LessonsSpeaking />} />
                 <Route path="/lessons-reading" element={<LessonsReading />} />
