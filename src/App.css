@@ -1,0 +1,61 @@
+/* Fix general page spacing for alignment with navbar */
+.header {
+  text-align: center;
+  margin: 0;
+  padding: 1rem; /* Proper padding for header content */
+}
+
+/* Fixed animated title height and ensured no text cutoff */
+.animated-title {
+  font-size: 3rem;
+  position: relative;
+  height: 4.5rem; /* Slightly increased height for Punjabi font */
+  overflow: hidden; /* Prevent text overflow */
+  line-height: 1.5; /* Ensures vertical centering and adequate space */
+}
+
+.animated-title span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out; /* Smooth animation */
+  font-weight: bold;
+}
+
+.animated-title.english-show .english {
+  transform: translateY(0); /* Slide in the English text */
+}
+
+.animated-title.english-show .punjabi {
+  transform: translateY(-100%); /* Slide out Punjabi */
+}
+
+.animated-title.punjabi-show .english {
+  transform: translateY(100%); /* Slide out English */
+}
+
+.animated-title.punjabi-show .punjabi {
+  transform: translateY(0); /* Slide in Punjabi */
+}
+
+/* Punjabi-specific font styling */
+.punjabi {
+  font-family: "Punjabi", serif;
+  font-size: 3.2rem; /* Ensures proper scaling */
+}
+
+/* Subtitle under the title */
+.subtitle {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #888;
+}
+
+/* Space under navbar for content proper positioning */
+main {
+  margin-top: 1.5rem; /* Adds space below sticky navbar */
+  padding: 1rem;
+}
