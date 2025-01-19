@@ -1,36 +1,39 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useSpring, animated } from '@react-spring/web';
+import { useGesture } from 'react-use-gesture';
 import figuresData from './important_punjabi_figures.json';
 import styled from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
+import khandaImage from '../assets/khanda.png';
+import punjabImage from '../assets/punjab.png';
 
 const Container = styled.div`
   max-width: 100vw;
   min-height: 100vh;
   background: #f0e6d6; // Antique paper color
-  padding: 2rem;
+  padding: 4rem;
   overflow-x: hidden;
 `;
 
 const BooksContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 4rem;
+  padding: 3rem;
+  perspective: 2000px;
 `;
 
 const BookCover = styled(motion.div)`
-  width: 200px;
-  height: 300px;
+  width: 300px;
+  height: 450px;
+  margin: 0 auto;
   background: ${props => props.color || '#8B4513'};
-  border-radius: 5px;
+  border-radius: 5px 15px 15px 5px;
   box-shadow: 
-    -5px 5px 15px rgba(0,0,0,0.3),
-    inset 0 0 30px rgba(0,0,0,0.3);
-  cursor: pointer;
+    -10px 10px 30px rgba(0,0,0,0.4),
+    inset 0 0 30px rgba(0,0,0,0.4);
   position: relative;
-  perspective: 1000px;
   transform-style: preserve-3d;
   
   &::before {
@@ -45,31 +48,55 @@ const BookCover = styled(motion.div)`
       rgba(255,255,255,0.1) 0%,
       rgba(255,255,255,0) 100%
     );
+    border-radius: inherit;
   }
 
   .spine {
     position: absolute;
-    left: -20px;
+    left: -30px;
     top: 0;
-    width: 20px;
+    width: 30px;
     height: 100%;
     background: ${props => props.color || '#8B4513'};
     transform: rotateY(-90deg);
     transform-origin: right;
     box-shadow: inset -2px 0 5px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: #f0e6d6;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    padding: 1rem 0;
   }
 
-  .title {
+  .pages {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #f0e6d6;
-    font-size: 1.2rem;
-    text-align: center;
-    width: 80%;
-    font-family: 'Playfair Display', serif;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    background: #fff;
+    transform: translateX(100%);
+    border-left: 2px solid rgba(0,0,0,0.1);
+    
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        to right,
+        #f0f0f0,
+        #f0f0f0 2px,
+        transparent 2px,
+        transparent 5px
+      );
+    }
   }
 `;
 
@@ -220,7 +247,7 @@ const ImportantFigures = () => {
                   }}
                 >
                   <div className="spine"></div>
-                  <div className="title">{category}</div>
+                  <div className="pages"></div>
                 </BookCover>
               ))}
             </BooksContainer>

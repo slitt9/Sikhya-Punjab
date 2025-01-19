@@ -1,8 +1,9 @@
+import Punjab3DMap from '../components/Punjab3DMap';
+
 const ImportantEvents = () => {
   return (
     <div>
-      <h1>Important Events</h1>
-      <p>Explore the significant historical events of Punjab.</p>
+      <Punjab3DMap />
     </div>
   );
 };
