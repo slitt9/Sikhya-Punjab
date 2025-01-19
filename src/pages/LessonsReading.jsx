@@ -101,7 +101,7 @@ const LessonReading = () => {
         }
 
         // Play audio feedback
-        const audio = new Audio(isAnswerCorrect ? '/correct.mp3' : '/incorrect.mp3');
+        const audio = new Audio(isAnswerCorrect ? 'audio/correct.mp3' : 'audio/incorrect.mp3');
         audio.play();
 
         setTimeout(() => {
