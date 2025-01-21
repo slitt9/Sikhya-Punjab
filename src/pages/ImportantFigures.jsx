@@ -35,6 +35,11 @@ const BookCover = styled(motion.div)`
     inset 0 0 30px rgba(0,0,0,0.4);
   position: relative;
   transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
   
   &::before {
     content: '';
@@ -49,6 +54,46 @@ const BookCover = styled(motion.div)`
       rgba(255,255,255,0) 100%
     );
     border-radius: inherit;
+  }
+
+  .book-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #f0e6d6;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    text-shadow: 0 0 10px rgba(255,215,0,0.5);
+    transition: all 0.3s ease;
+    z-index: 2;
+
+    &::before {
+      content: '✧';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      color: gold;
+    }
+
+    &::after {
+      content: '✧';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      color: gold;
+    }
+  }
+
+  &:hover .book-title {
+    transform: scale(1.1);
+    text-shadow: 
+      0 0 20px rgba(255,215,0,0.8),
+      0 0 30px rgba(255,215,0,0.6),
+      0 0 40px rgba(255,215,0,0.4);
   }
 
   .spine {
@@ -246,8 +291,9 @@ const ImportantFigures = () => {
                     transition: { delay: index * 0.2 }
                   }}
                 >
-                  <div className="spine"></div>
+                  <div className="spine">{category}</div>
                   <div className="pages"></div>
+                  <div className="book-title">{category}</div>
                 </BookCover>
               ))}
             </BooksContainer>
