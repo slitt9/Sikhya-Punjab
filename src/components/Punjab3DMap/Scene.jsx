@@ -4,7 +4,7 @@ import { useSpring, animated } from '@react-spring/three';
 import * as THREE from 'three';
 import { TextureLoader } from 'three';
 import { Html, useTexture } from '@react-three/drei';
-import punjabMapTexture from '../../assets/punjab-map.jpg';
+// import punjabMapTexture from '../../assets/punjab-map.jpg';
 const HISTORICAL_EVENTS = [
     { 
       id: 1, 

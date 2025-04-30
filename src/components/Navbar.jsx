@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logoImg from "../assets/sikhyapunjablogo.png"; // Import your logo image
@@ -28,12 +27,6 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/values-ethics">Values & Ethics</Link>
-          </li>
-          <li>
-            <button>Sign In</button>
-          </li>
-          <li>
-            <button>Register</button>
           </li>
         </ul>
       </nav>
