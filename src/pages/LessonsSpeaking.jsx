@@ -1,20 +1,20 @@
-import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import styled from 'styled-components';
+import React, { useState, useEffect, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import styled from 'styled-components'
 
 const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   font-family: 'Arial', sans-serif;
-`;
+`
 
 const GameArea = styled.div`
   background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
   border-radius: 20px;
   padding: 2rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-`;
+`
 
 const ProgressBar = styled(motion.div)`
   width: 100%;
@@ -29,7 +29,7 @@ const ProgressBar = styled(motion.div)`
     background: #4CAF50;
     border-radius: 5px;
   }
-`;
+`
 
 const Card = styled(motion.div)`
   background: white;
@@ -38,17 +38,17 @@ const Card = styled(motion.div)`
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
-`;
+`
 
 const WordDisplay = styled(motion.div)`
   font-size: 3rem;
   font-family: 'Mukta Mahee', sans-serif;
   margin: 2rem 0;
   color: #333;
-`;
+`
 
 const Button = styled(motion.button)`
-  background: ${props => props.recording ? '#ff4444' : '#4CAF50'};
+  background: ${props => (props.recording ? '#ff4444' : '#4CAF50')};
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -61,7 +61,7 @@ const Button = styled(motion.button)`
     background: #cccccc;
     cursor: not-allowed;
   }
-`;
+`
 
 const WaveformContainer = styled.div`
   height: 100px;
@@ -71,7 +71,26 @@ const WaveformContainer = styled.div`
   margin: 1rem 0;
   position: relative;
   overflow: hidden;
-`;
+`
+
+const ResultWrapper = styled(motion.div)`
+  text-align: center;
+  margin-top: 1rem;
+`
+
+const ResultTitle = styled.h3`
+  font-family: 'Mukta Mahee', sans-serif;
+  color: #FFCA28;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+`
+
+const ResultText = styled.p`
+  font-family: 'Mukta Mahee', sans-serif;
+  color: #222;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+`
 
 const speakingData = [
   { punjabi: 'ਸਤ ਸ੍ਰੀ ਅਕਾਲ', english: 'Sat Sri Akal', audio: '/audio/sat-sri-akal.mp3' },
@@ -79,138 +98,96 @@ const speakingData = [
   { punjabi: 'ਕਿਵੇਂ ਹੋ', english: 'Kiven Ho', audio: '/audio/kiven-ho.mp3' },
   { punjabi: 'ਠੀਕ ਹਾਂ', english: 'Theek Haan', audio: '/audio/theek-haan.mp3' },
   { punjabi: 'ਮੈਂ ਪੰਜਾਬੀ ਸਿੱਖ ਰਿਹਾ ਹਾਂ', english: 'Main Punjabi Sikh Riha Haan', audio: '/audio/learning.mp3' },
-];
+]
 
 const LessonsSpeaking = () => {
-  const [currentWord, setCurrentWord] = useState(0);
-  const [isRecording, setIsRecording] = useState(false);
-  const [audioURL, setAudioURL] = useState('');
-  const [score, setScore] = useState(0);
-  const [showFeedback, setShowFeedback] = useState(false);
-  const mediaRecorder = useRef(null);
-  const audioContext = useRef(null);
-  const analyser = useRef(null);
-  const animationFrame = useRef(null);
+  const [currentWord, setCurrentWord] = useState(0)
+  const [isRecording, setIsRecording] = useState(false)
+  const [audioURL, setAudioURL] = useState('')
+  const mediaRecorder = useRef(null)
+  const audioContext = useRef(null)
+  const analyser = useRef(null)
+  const animationFrame = useRef(null)
 
   useEffect(() => {
-    setupAudioContext();
-    return () => {
-      if (animationFrame.current) {
-        cancelAnimationFrame(animationFrame.current);
-      }
-    };
-  }, []);
+    audioContext.current = new (window.AudioContext || window.webkitAudioContext)()
+    analyser.current = audioContext.current.createAnalyser()
+    analyser.current.fftSize = 2048
 
-  const setupAudioContext = async () => {
-    audioContext.current = new (window.AudioContext || window.webkitAudioContext)();
-    analyser.current = audioContext.current.createAnalyser();
-    analyser.current.fftSize = 2048;
-  };
+    // Preload audio
+    speakingData.forEach(item => {
+      const a = new Audio(item.audio)
+      a.preload = 'auto'
+    })
+
+    return () => cancelAnimationFrame(animationFrame.current)
+  }, [])
 
   const startRecording = async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      mediaRecorder.current = new MediaRecorder(stream);
-      
-      mediaRecorder.current.ondataavailable = (event) => {
-        const audioBlob = new Blob([event.data], { type: 'audio/wav' });
-        const url = URL.createObjectURL(audioBlob);
-        setAudioURL(url);
-      };
-
-      mediaRecorder.current.start();
-      setIsRecording(true);
-      visualizeAudio(stream);
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+      mediaRecorder.current = new MediaRecorder(stream)
+      mediaRecorder.current.ondataavailable = e => {
+        const blob = new Blob([e.data], { type: 'audio/wav' })
+        setAudioURL(URL.createObjectURL(blob))
+      }
+      mediaRecorder.current.start()
+      setIsRecording(true)
+      visualizeAudio(stream)
     } catch (err) {
-      console.error('Error accessing microphone:', err);
+      console.error(err)
     }
-  };
+  }
 
   const stopRecording = () => {
-    if (mediaRecorder.current && isRecording) {
-      mediaRecorder.current.stop();
-      setIsRecording(false);
-      cancelAnimationFrame(animationFrame.current);
+    if (mediaRecorder.current) {
+      mediaRecorder.current.stop()
+      setIsRecording(false)
+      cancelAnimationFrame(animationFrame.current)
     }
-  };
+  }
 
-  const visualizeAudio = (stream) => {
-    const source = audioContext.current.createMediaStreamSource(stream);
-    source.connect(analyser.current);
-    
-    const canvas = document.getElementById('waveform');
-    const canvasCtx = canvas.getContext('2d');
-    const bufferLength = analyser.current.frequencyBinCount;
-    const dataArray = new Uint8Array(bufferLength);
-
+  const visualizeAudio = stream => {
+    const source = audioContext.current.createMediaStreamSource(stream)
+    source.connect(analyser.current)
+    const canvas = document.getElementById('waveform')
+    const ctx = canvas.getContext('2d')
+    const bufferLength = analyser.current.frequencyBinCount
+    const dataArray = new Uint8Array(bufferLength)
     const draw = () => {
-      animationFrame.current = requestAnimationFrame(draw);
-      analyser.current.getByteTimeDomainData(dataArray);
-
-      canvasCtx.fillStyle = 'rgb(255, 255, 255)';
-      canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
-      canvasCtx.lineWidth = 2;
-      canvasCtx.strokeStyle = '#4CAF50';
-      canvasCtx.beginPath();
-
-      const sliceWidth = canvas.width / bufferLength;
-      let x = 0;
-
-      for (let i = 0; i < bufferLength; i++) {
-        const v = dataArray[i] / 128.0;
-        const y = v * canvas.height / 2;
-
-        if (i === 0) {
-          canvasCtx.moveTo(x, y);
-        } else {
-          canvasCtx.lineTo(x, y);
-        }
-
-        x += sliceWidth;
-      }
-
-      canvasCtx.lineTo(canvas.width, canvas.height / 2);
-      canvasCtx.stroke();
-    };
-
-    draw();
-  };
+      animationFrame.current = requestAnimationFrame(draw)
+      analyser.current.getByteTimeDomainData(dataArray)
+      ctx.fillStyle = 'rgb(255, 255, 255)'
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
+      ctx.lineWidth = 2
+      ctx.strokeStyle = '#4CAF50'
+      ctx.beginPath()
+      let x = 0
+      const slice = canvas.width / bufferLength
+      dataArray.forEach((v, i) => {
+        const y = (v / 128.0) * (canvas.height / 2)
+        i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y)
+        x += slice
+      })
+      ctx.lineTo(canvas.width, canvas.height / 2)
+      ctx.stroke()
+    }
+    draw()
+  }
 
   const playReference = () => {
-    const audioFilePath = speakingData[currentWord].audio;
-
-    // Create an audio object
-    const audio = new Audio(audioFilePath);
-
-    // Debugging: Log the audio file path to verify it's correct
-    console.log('Attempting to play:', audioFilePath);
-
-    // Attempt to play the audio
-    audio.play()
-        .then(() => console.log('Audio is playing'))
-        .catch((err) => {
-          console.error('Error playing audio:', err);
-        });
-  };
-
-  useEffect(() => {
-    // Preload all audio files on page load
-    speakingData.forEach((item) => {
-      const audio = new Audio(item.audio);
-      audio.preload = 'auto';
-    });
-  }, []);
-
+    new Audio(speakingData[currentWord].audio).play().catch(console.error)
+  }
 
   const handleNext = () => {
-    if (currentWord < speakingData.length - 1) {
-      setCurrentWord(prev => prev + 1);
-      setAudioURL('');
-      setShowFeedback(false);
-    } else {
-      // Game complete logic
-    }
-  };
+    setAudioURL('')
+    setCurrentWord(prev => prev + 1)
+  }
+
+  const resetGame = () => {
+    setAudioURL('')
+    setCurrentWord(0)
+  }
 
   return (
     <Container>
@@ -234,12 +211,8 @@ const LessonsSpeaking = () => {
             <Card>
               <WordDisplay>{speakingData[currentWord].punjabi}</WordDisplay>
               <p>{speakingData[currentWord].english}</p>
-              
-              <Button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={playReference}
-              >
+
+              <Button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={playReference}>
                 🔊 Listen
               </Button>
 
@@ -257,13 +230,17 @@ const LessonsSpeaking = () => {
               </Button>
 
               {audioURL && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                >
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
                   <audio controls src={audioURL} />
-                  <Button onClick={handleNext}>Next Word</Button>
+                  {currentWord < speakingData.length - 1 ? (
+                    <Button onClick={handleNext}>Next Word</Button>
+                  ) : (
+                    <ResultWrapper initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.5 }}>
+                      <ResultTitle>🎉 Great Job!</ResultTitle>
+                      <ResultText>Want to try again?</ResultText>
+                      <Button onClick={resetGame}>Restart</Button>
+                    </ResultWrapper>
+                  )}
                 </motion.div>
               )}
             </Card>
@@ -271,7 +248,7 @@ const LessonsSpeaking = () => {
         </AnimatePresence>
       </GameArea>
     </Container>
-  );
-};
+  )
+}
 
-export default LessonsSpeaking;
+export default LessonsSpeaking

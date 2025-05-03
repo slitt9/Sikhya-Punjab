@@ -14,10 +14,10 @@ const Navbar = () => {
         </div>
         <ul>
           <li>
-            <Link to="/lessons-speaking">Lessons: Speaking</Link>
+            <Link to="/lessons-speaking">Test Your Speaking</Link>
           </li>
           <li>
-            <Link to="/lessons-reading">Lessons: Reading</Link>
+            <Link to="/lessons-reading">Test Your Reading</Link>
           </li>
           <li>
             <Link to="/important-figures">Important Figures</Link>

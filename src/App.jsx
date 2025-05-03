@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Home from "./components/Home";
 import CardGrid from "./components/CardGrid";
 import LessonsSpeaking from "./pages/LessonsSpeaking";
 import LessonsReading from "./pages/LessonsReading";

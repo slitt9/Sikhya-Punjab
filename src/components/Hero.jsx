@@ -107,7 +107,7 @@ const TaglineLink = styled(motion(Link))`
 `
 
 const links = [
-  { to: '/lessons-reading', label: 'Learn to Read' },
+  { to: '/lessons-reading', label: 'Read' },
   { to: '/lessons-speaking', label: 'Speak' },
   { to: '/important-events', label: 'Discover History' }
 ]
