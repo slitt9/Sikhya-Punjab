@@ -2,156 +2,137 @@
   "Religious Leaders": [
     {
       "name": "Guru Nanak Dev Ji",
-      "image": "https://www.sikhiwiki.org/images/f/fb/Guru_Nanak_Dev_ji.jpg",
-      "description": "Founder of Sikhism and the first Sikh Guru."
+      "image": "src/assets/gurus/sg1.jpg",
+      "description": "Guru Nanak Dev Ji founded Sikhism in the late 15th century, traveling thousands of miles to spread a message of equality and devotion to one God. He composed hymns that emphasize social justice, community service, and the inner spiritual life. His teachings laid the foundation for a faith that rejects caste distinctions and ritualism."
     },
     {
       "name": "Guru Angad Dev Ji",
-      "image": "https://www.sikhiwiki.org/images/d/d5/Guru_Angad_Dev_Ji.jpg",
-      "description": "Second Sikh Guru, known for creating the Gurmukhi script."
+      "image": "src/assets/gurus/sg2.jpg",
+      "description": "Guru Angad Dev Ji was the second Sikh Guru and a devoted disciple of Guru Nanak. He standardized and promoted the Gurmukhi script, making Sikh scripture accessible to the common people. He also institutionalized community kitchens (langar) and emphasized physical education and health through wrestling akharas."
     },
     {
       "name": "Guru Amar Das Ji",
-      "image": "https://www.sikhiwiki.org/images/0/0c/Guru_Amar_Das_Ji.jpg",
-      "description": "Third Sikh Guru, known for establishing Langar (community kitchen)."
+      "image": "src/assets/gurus/sg3.jpg",
+      "description": "Guru Amar Das Ji, the third Sikh Guru, strengthened the Sikh community by formalizing the practice of langar and insisting on social reforms like freeing women from veil and sati. He instituted the manji system—an early network of congregational leaders—to decentralize spiritual authority. His compassionate leadership underscored equality across gender, caste, and creed."
     },
     {
       "name": "Guru Ram Das Ji",
-      "image": "https://www.sikhiwiki.org/images/d/de/Guru_Ram_Das_Ji.jpg",
-      "description": "Fourth Sikh Guru, founder of Amritsar."
+      "image": "src/assets/gurus/sg4.jpg",
+      "description": "Guru Ram Das Ji, the fourth Sikh Guru, founded the city of Amritsar and supervised the digging of its sacred pool (Amrit Sarovar). He composed hymns of humility and divine love, several of which appear in the Guru Granth Sahib. Under his guidance, the young Sikh community began crystallizing into both a spiritual fellowship and a growing social institution."
     },
     {
       "name": "Guru Arjan Dev Ji",
-      "image": "https://www.sikhiwiki.org/images/c/c6/Guru_Arjan_Dev_Ji.jpg",
-      "description": "Fifth Sikh Guru and compiler of the Adi Granth."
+      "image": "src/assets/gurus/sg5.jpg",
+      "description": "Guru Arjan Dev Ji, the fifth Sikh Guru, compiled the Adi Granth—the first edition of what became the Guru Granth Sahib—and installed it in the Harmandir Sahib (Golden Temple). He fostered an open, interfaith ethos by including hymns of Hindu and Muslim saints. His martyrdom under Mughal persecution in 1606 marked the first recorded sacrifice for Sikh faith and inspired later generations."
     },
     {
       "name": "Guru Hargobind Ji",
-      "image": "https://www.sikhiwiki.org/images/8/8b/Guru_Hargobind_Ji.jpg",
-      "description": "Sixth Sikh Guru, known for militarizing Sikhs."
+      "image": "src/assets/gurus/sg6.jpg",
+      "description": "Guru Hargobind Ji, the sixth Sikh Guru, introduced the concept of Miri-Piri—balancing spiritual authority with temporal power—by donning two swords. He built the Akal Takht as a centre of justice and sovereignty, and openly trained Sikhs in martial arts to defend against tyranny. His leadership transformed the community into both a devotional order and a self-defending brotherhood."
     },
     {
       "name": "Guru Har Rai Ji",
-      "image": "https://www.sikhiwiki.org/images/4/43/Guru_Har_Rai_Ji.jpg",
-      "description": "Seventh Sikh Guru, focused on compassion and healing."
+      "image": "src/assets/gurus/sg7.jpg",
+      "description": "Guru Har Rai Ji, the seventh Sikh Guru, emphasized compassion and healing, maintaining extensive herb gardens and medical clinics at his Manji centres. He continued the martial traditions of his grandfather while also promoting environmental stewardship. His gentle rule focused on charitable works rather than armed conflict, earning him wide respect across communities."
     },
     {
       "name": "Guru Har Krishan Ji",
-      "image": "https://www.sikhiwiki.org/images/d/db/Guru_Harkrishan_Ji.jpg",
-      "description": "Eighth Sikh Guru, known as the child Guru."
+      "image": "src/assets/gurus/sg8.jpg",
+      "description": "Guru Har Krishan Ji became the eighth Sikh Guru at just five years old, yet he exemplified remarkable wisdom and humility. During a smallpox epidemic in Delhi, he served the afflicted directly, saying “Baba baksh de”—‘Father, please forgive (the sins of the sick).’ His selfless service and early passing at age eight deepened the Sikhs’ commitment to seva (service)."
     },
     {
       "name": "Guru Tegh Bahadur Ji",
-      "image": "https://www.sikhiwiki.org/images/8/8f/Guru_Tegh_Bahadur_Ji.jpg",
-      "description": "Ninth Sikh Guru, martyred for protecting religious freedom."
+      "image": "src/assets/gurus/sg9.jpg",
+      "description": "Guru Tegh Bahadur Ji, the ninth Sikh Guru, stood as a champion of religious freedom for all faiths, famously sacrificing his life rather than abandon Kashmiri Pandits facing forced conversion. He traveled extensively to visit remote congregations and spread teachings of inner detachment. His martyrdom in 1675 under Mughal tyranny is remembered as a supreme act of courage and solidarity."
     },
     {
       "name": "Guru Gobind Singh Ji",
-      "image": "https://www.sikhiwiki.org/images/5/52/Guru_Gobind_Singh_Ji.jpg",
-      "description": "Tenth Sikh Guru, founder of the Khalsa."
+      "image": "src/assets/gurus/sg10.jpg",
+      "description": "Guru Gobind Singh Ji, the tenth Sikh Guru, founded the Khalsa in 1699—a collective of baptized Sikhs dedicated to justice and righteousness—instituting the Five Ks and the double-edged sword (kirpan) as symbols. He was a prolific poet and warrior, defending his people while also composing inspiring shabads (hymns). He declared the Guru Granth Sahib as the eternal Guru before his passing, completing the Sikh Guruship transition to scripture."
     }
   ],
+
   "Freedom Fighters": [
     {
       "name": "Bhagat Singh",
-      "image": "https://bhagatsingh.in/images/bhagat_singh_photo.jpg",
-      "description": "Revolutionary freedom fighter and martyr."
+      "image": "src/assets/freedomfighters/bhagatsingh.jpg",
+      "description": "Bhagat Singh was a charismatic revolutionary who became a symbol of youth defiance against British colonial rule in India. He co-founded the Hindustan Socialist Republican Association and carried out daring acts—including the 1929 Assembly bombing—to protest oppressive laws. Even at 23, his hunger strike in prison and subsequent martyrdom inspired generations of freedom fighters."
     },
     {
       "name": "Udham Singh",
-      "image": "https://www.punjabdata.com/Images/UdhamSingh.jpg",
-      "description": "Assassinated Michael O'Dwyer to avenge the Jallianwala Bagh massacre."
+      "image": "src/assets/freedomfighters/udhamsingh.jpg",
+      "description": "Udham Singh avenged the 1919 Jallianwala Bagh massacre by traveling to London and assassinating Sir Michael O’Dwyer in 1940. He saw this act as justice for innocent civilians killed under O’Dwyer’s orders. Despite knowing he’d be executed, Singh met his fate courageously, cementing his place as a fearless patriot."
     },
     {
       "name": "Kartar Singh Sarabha",
-      "image": "http://www.sikhinstitute.org/images/kartar_singh_sarabha.jpg",
-      "description": "Member of the Ghadar Party and early freedom fighter."
+      "image": "src/assets/freedomfighters/kartarsingh.jpg",
+      "description": "Kartar Singh Sarabha was one of the youngest leaders of the Ghadar Party, advocating armed revolt against British rule during World War I. At just 19, he wrote stirring pamphlets and articles urging expatriate Indians to return home and fight. His 1915 execution in Lahore made him a martyr and rallying point for future revolutionaries."
     },
     {
       "name": "Lala Lajpat Rai",
-      "image": "https://www.culturalindia.net/iliimages/Lala-Lajpat-Rai-ili-136-img-3.jpg",
-      "description": "Leader of the Indian independence movement, known as Punjab Kesari."
+      "image": "src/assets/freedomfighters/lalarai.jpg",
+      "description": "Lala Lajpat Rai, known as 'Punjab Kesari,' led movements against the Simon Commission in 1928 and suffered fatal injuries from a police baton charge. A prolific writer, he founded schools and journals to promote Indian self-rule. His sacrifice ignited nationwide protests and inspired younger leaders like Bhagat Singh to pursue justice through both non-violent and revolutionary paths."
     },
     {
       "name": "Sohan Singh Bhakna",
-      "image": "http://www.sikhinstitute.org/images/sohan_singh_bhakna.jpg",
-      "description": "Founding leader of the Ghadar Party."
+      "image": "src/assets/freedomfighters/sohansingh.jpg",
+      "description": "Sohan Singh Bhakna co-founded the Ghadar Party in 1913 to mobilize Indian expatriates in North America for armed rebellion. He tirelessly organized fundraisers, rallies, and publications advocating for Indian independence. Even after multiple imprisonments, Bhakna remained committed to the cause until his death, symbolizing unwavering patriotic zeal."
     }
   ],
+
   "Rulers and Warriors": [
-    {
-      "name": "Maharaja Ranjit Singh",
-      "image": "https://www.sikhiwiki.org/images/0/03/MaharajaRanjitSingh.jpg",
-      "description": "Founder of the Sikh Empire, known as the 'Lion of Punjab.'"
-    },
-    {
-      "name": "Hari Singh Nalwa",
-      "image": "https://www.sikhiwiki.org/images/e/e3/Hari_singh_nalwa_2.jpg",
-      "description": "Commander-in-chief of the Sikh Khalsa Army under Maharaja Ranjit Singh."
-    },
-    {
-      "name": "Jassa Singh Ahluwalia",
-      "image": "https://www.sikhiwiki.org/images/7/70/Jassa_Singh_Ahluwalia_-_Ahluwalia_Misal.jpg",
-      "description": "Sikh leader and founder of the Ahluwalia Misal."
-    },
-    {
-      "name": "Banda Singh Bahadur",
-      "image": "https://www.discoversikhism.com/images/sikh_gurus/banda_singh_bahadur_4.jpg",
-      "description": "Sikh warrior and leader who established Sikh rule in Punjab."
-    },
-    {
-      "name": "Mai Bhago",
-      "image": "https://www.discoversikhism.com/images/sikh_women/mai_bhago_3.jpg",
-      "description": "Female Sikh warrior who led Sikh soldiers against the Mughals."
-    }
-  ],
-  "Poets and Writers": [
-    {
-      "name": "Bulleh Shah",
-      "image": "https://www.apnaorg.com/articles/majid/bulleh-shah.jpg",
-      "description": "Sufi poet known for his spiritual and philosophical poetry."
-    },
-    {
-      "name": "Waris Shah",
-      "image": "https://www.apnaorg.com/gallery/waris-shah.jpg",
-      "description": "Author of the Punjabi epic 'Heer Ranjha.'"
-    },
-    {
-      "name": "Bhai Gurdas Ji",
-      "image": "https://www.sikhiwiki.org/images/f/f8/Bhai_Gurdas_Ji.jpg",
-      "description": "Early Sikh scholar and poet, writer of Vaaran Bhai Gurdas."
-    },
-    {
-      "name": "Shiv Kumar Batalvi",
-      "image": "https://www.apnaorg.com/articles/tribune/shiv-kumar-batalvi.jpg",
-      "description": "Modern Punjabi poet known for his romantic and melancholic poetry."
-    },
-    {
-      "name": "Amrita Pritam",
-      "image": "https://www.apnaorg.com/punjabi/virsa/graphics/amrita-pritam.jpg",
-      "description": "Renowned Punjabi writer and poet, author of Pinjar."
-    }
-  ],
-  "Prominent Women": [
-    {
-      "name": "Rani Jindan (Maharani Jind Kaur)",
-      "image": "https://www.sikhiwiki.org/images/6/66/Rani_Jindan_Jind_Kaur.jpg",
-      "description": "Queen regent of the Sikh Empire and mother of Duleep Singh."
-    },
-    {
-      "name": "Bibi Bhani Ji",
-      "image": "https://www.sikhiwiki.org/images/b/ba/Bibi_BhaniJi.jpg",
-      "description": "Daughter of Guru Amar Das Ji and mother of Guru Arjan Dev Ji."
-    },
-    {
-      "name": "Bibi Nanaki Ji",
-      "image": "https://www.sikhiwiki.org/images/9/9e/Bibi_Nanaki_ji.jpg",
-      "description": "Elder sister of Guru Nanak Dev Ji, known for her support and devotion."
-    },
-    {
-      "name": "Mai Bhago",
-      "image": "https://www.discoversikhism.com/images/sikh_women/mai_bhago_3.jpg",
-      "description": "Female Sikh warrior who led Sikh soldiers against the Mughals."
-    }
-  ]
+  {
+    "name": "Maharaja Ranjit Singh",
+    "image": "src/assets/rulers/ranjitsingh.jpg",
+    "description": "Maharaja Ranjit Singh, the 'Lion of Punjab,' unified the Sikh misls into a powerful Sikh Empire (1799–1839) that spanned from Kashmir to the Indus. He patronized arts, secular administration, and a modern army incorporating European drill systems. His reign was marked by religious tolerance—he employed Hindu, Muslim, and European officers alike."
+  },
+  {
+    "name": "Hari Singh Nalwa",
+    "image": "src/assets/rulers/harisingh.jpg",
+    "description": "Hari Singh Nalwa was Maharaja Ranjit Singh’s greatest general, famed for halting Afghan invasions and expanding Sikh territories to the Khyber Pass. Known for personal valor, he led campaigns that secured strategic forts—Attock, Peshawar, and Multan. His legendary fearlessness became the stuff of Punjabi ballads and military lore."
+  },
+  {
+    "name": "Jassa Singh Ahluwalia",
+    "image": "src/assets/rulers/jassasingh.jpg",
+    "description": "Jassa Singh Ahluwalia led the Ahluwalia misl (confederacy) and played a key role in liberating Delhi’s Golden Temple from Mughal control in 1783. He was elected 'Sarkar-i-Khalsa' by the Sikh chiefs, symbolizing sovereign authority. His governance balanced martial prowess with civic welfare for Sikhs in the 18th century."
+  },
+  {
+    "name": "Banda Singh Bahadur",
+    "image": "src/assets/rulers/bandasingh.jpg",
+    "description": "Banda Singh Bahadur was appointed by Guru Gobind Singh Ji to lead Sikhs into Punjab after 1708. He captured Sirhind and abolished feudal zamindari, issuing the first Khalsa coinage and land grants to peasants. Though eventually captured and executed, his revolt laid early foundations for Sikh sovereignty."
+  },
+  {
+    "name": "Mai Bhago",
+    "image": "src/assets/rulers/maibhago.jpg",
+    "description": "Mai Bhago was a valiant Sikh woman who led forty deserters back into battle against Mughal forces in 1705, revitalizing Sikh morale. Wounded in combat, she survived to become a warrior-poet and disciple of Guru Gobind Singh Ji. Her bravery is celebrated each Vaisakhi, inspiring Sikh martial and spiritual traditions."
+  }
+],
+
+ "Poets and Writers": [
+  {
+    "name": "Bulleh Shah",
+    "image": "src/assets/writers/bullehshah.jpg",
+    "description": "Bulleh Shah was an 18th-century Punjabi Sufi poet whose kafi verses critique religious orthodoxy and celebrate divine love. His poetry blends mystical insight with social commentary, making him beloved across South Asia. Centuries later, his works continue to be sung by qawwali and folk artists alike."
+  },
+  {
+    "name": "Waris Shah",
+    "image": "src/assets/writers/warisshah.jpg",
+    "description": "Waris Shah authored the epic poem “Heer Ranjha” in 1766, retelling a Punjabi folk romance with profound psychological and social depth. His vivid storytelling captures rural life, caste tensions, and the power of love. “Heer Ranjha” remains a cornerstone of Punjabi literature and oral tradition."
+  },
+  {
+    "name": "Bhai Gurdas Ji",
+    "image": "src/assets/writers/bhaigurdas.jpg",
+    "description": "Bhai Gurdas Ji was a scholar-poet whose vaaran (ballads) provide key commentary on Guru Granth Sahib’s hymns and early Sikh history. As scribe of the Adi Granth under Guru Arjan Dev Ji, his literary work helped preserve Sikh teachings. Revered as the ‘first interpreter of the Guru Granth,’ his writings guide scholars and devotees to this day."
+  },
+  {
+    "name": "Shiv Kumar Batalvi",
+    "image": "src/assets/writers/shivkumar.jpg",
+    "description": "Shiv Kumar Batalvi (1936–1973) was a modern Punjabi poet whose romantic and melancholic verses captured youthful longing and tragedy. Winner of the Sahitya Akademi Award at age 28, his poems like “Lajwanti” remain deeply emotive. His passionate style broke from classical forms, influencing post-colonial Punjabi literature."
+  },
+  {
+    "name": "Amrita Pritam",
+    "image": "src/assets/writers/amritapritam.jpg",
+    "description": "Amrita Pritam (1919–2005) was a trailblazing Punjabi writer and poet, best known for her partition novel “Pinjar.” She wrote boldly on women’s suffering and identity, earning the Sahitya Akademi and Padma Shri honors. Her lyrical poetry and prose continue to resonate across India and Pakistan."
+  }
+]
 }

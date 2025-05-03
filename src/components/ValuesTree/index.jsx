@@ -16,6 +16,8 @@ const ValuesTree = () => {
             enableRotate={true}
             minPolarAngle={Math.PI / 4}
             maxPolarAngle={Math.PI / 2.5}
+            minDistance={5}
+            maxDistance={20}
           />
         </Suspense>
       </Canvas>

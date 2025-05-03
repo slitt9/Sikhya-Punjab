@@ -1,17 +1,18 @@
-import { useState } from 'react';
-import { useGesture } from '@use-gesture/react';
+// src/components/ImportantFigures.jsx
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useSpring, animated } from '@react-spring/web';
+import styled, { createGlobalStyle } from 'styled-components';
 import figuresData from './important_punjabi_figures.json';
-import styled from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
-import khandaImage from '../assets/khanda.png';
-import punjabImage from '../assets/punjab.png';
+
+// Global styles (if needed)
+const GlobalStyle = createGlobalStyle`
+  /* Global nav or body styles can go here */
+`;
 
 const Container = styled.div`
   max-width: 100vw;
   min-height: 100vh;
-  background: #f0e6d6; // Antique paper color
+  background: #f0e6d6;
   padding: 4rem;
   overflow-x: hidden;
 `;
@@ -30,9 +31,7 @@ const BookCover = styled(motion.div)`
   margin: 0 auto;
   background: ${props => props.color || '#8B4513'};
   border-radius: 5px 15px 15px 5px;
-  box-shadow: 
-    -10px 10px 30px rgba(0,0,0,0.4),
-    inset 0 0 30px rgba(0,0,0,0.4);
+  box-shadow: -10px 10px 30px rgba(0,0,0,0.4), inset 0 0 30px rgba(0,0,0,0.4);
   position: relative;
   transform-style: preserve-3d;
   display: flex;
@@ -40,21 +39,6 @@ const BookCover = styled(motion.div)`
   justify-content: center;
   cursor: pointer;
   overflow: hidden;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      45deg,
-      rgba(255,255,255,0.1) 0%,
-      rgba(255,255,255,0) 100%
-    );
-    border-radius: inherit;
-  }
 
   .book-title {
     font-family: 'Playfair Display', serif;
@@ -67,33 +51,14 @@ const BookCover = styled(motion.div)`
     transition: all 0.3s ease;
     z-index: 2;
 
-    &::before {
+    &::before, &::after {
       content: '✧';
       position: absolute;
-      top: -20px;
-      left: 50%;
-      transform: translateX(-50%);
       font-size: 1.5rem;
       color: gold;
     }
-
-    &::after {
-      content: '✧';
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 1.5rem;
-      color: gold;
-    }
-  }
-
-  &:hover .book-title {
-    transform: scale(1.1);
-    text-shadow: 
-      0 0 20px rgba(255,215,0,0.8),
-      0 0 30px rgba(255,215,0,0.6),
-      0 0 40px rgba(255,215,0,0.4);
+    &::before { top: -20px; left: 50%; transform: translateX(-50%); }
+    &::after  { bottom: -20px; left: 50%; transform: translateX(-50%); }
   }
 
   .spine {
@@ -126,7 +91,7 @@ const BookCover = styled(motion.div)`
     background: #fff;
     transform: translateX(100%);
     border-left: 2px solid rgba(0,0,0,0.1);
-    
+
     &::after {
       content: '';
       position: absolute;
@@ -155,14 +120,16 @@ const OpenBook = styled(motion.div)`
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   position: relative;
   perspective: 2000px;
+  overflow: hidden;
 `;
 
 const Page = styled(motion.div)`
   flex: 1;
-  background: #fff;
-  padding: 2rem;
-  position: relative;
   background: linear-gradient(to right, #f9f4e8, #fff);
+  padding: 2rem;
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
   box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
 
   &.left-page {
@@ -179,14 +146,18 @@ const Page = styled(motion.div)`
 
 const FigureContent = styled.div`
   text-align: center;
-  
+
   img {
-    width: 80%;
-    height: 300px;
-    object-fit: cover;
+    max-width: 90%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   h3 {
@@ -227,9 +198,8 @@ const NavButton = styled(motion.button)`
 const categoryColors = {
   'Religious Leaders': '#8B4513',
   'Freedom Fighters': '#800000',
-  'Warriors': '#654321',
+  'Rulers and Warriors': '#654321',
   'Poets and Writers': '#4A3C2A',
-  'Prominent Women': '#5C4033'
 };
 
 const ImportantFigures = () => {
@@ -237,175 +207,84 @@ const ImportantFigures = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const categories = Object.keys(figuresData);
 
-  const getFiguresForCategory = (category) => {
-    return figuresData[category] || [];
-  };
+  const getFigures = (cat) => figuresData[cat] || [];
 
-  const handleBookClick = (category) => {
-    setSelectedCategory(category);
+  const openCategory = (cat) => {
+    setSelectedCategory(cat);
     setCurrentPage(0);
   };
 
-  const handleNextPage = () => {
-    const maxPages = Math.floor(getFiguresForCategory(selectedCategory).length / 2);
-    if (currentPage < maxPages - 1) {
-      setCurrentPage(prev => prev + 1);
-    }
+  const nextPage = () => {
+    const maxPages = Math.ceil(getFigures(selectedCategory).length / 2) - 1;
+    setCurrentPage((p) => Math.min(p + 1, maxPages));
   };
 
-  const handlePrevPage = () => {
-    if (currentPage > 0) {
-      setCurrentPage(prev => prev - 1);
-    }
-  };
-
-  const handleCloseBook = () => {
-    setSelectedCategory(null);
-    setCurrentPage(0);
-  };
+  const prevPage = () => setCurrentPage((p) => Math.max(p - 1, 0));
+  const closeBook = () => setSelectedCategory(null);
 
   return (
     <Container>
+      <GlobalStyle />
       <AnimatePresence mode="wait">
         {!selectedCategory ? (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <BooksContainer>
-              {categories.map((category, index) => (
-                <BookCover
-                  key={category}
-                  color={categoryColors[category]}
-                  onClick={() => handleBookClick(category)}
-                  whileHover={{ 
-                    rotateY: -20,
-                    scale: 1.05,
-                    transition: { duration: 0.3 }
-                  }}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ 
-                    opacity: 1, 
-                    y: 0,
-                    transition: { delay: index * 0.2 }
-                  }}
-                >
-                  <div className="spine">{category}</div>
-                  <div className="pages"></div>
-                  <div className="book-title">{category}</div>
-                </BookCover>
-              ))}
-            </BooksContainer>
-          </motion.div>
+          <BooksContainer>
+            {categories.map((cat, i) => (
+              <BookCover
+                key={cat}
+                color={categoryColors[cat]}
+                onClick={() => openCategory(cat)}
+                whileHover={{ rotateY: -20, scale: 1.05 }}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0, transition: { delay: i * 0.2 } }}
+              >
+                <div className="spine">{cat}</div>
+                <div className="pages"></div>
+                <div className="book-title">{cat}</div>
+              </BookCover>
+            ))}
+          </BooksContainer>
         ) : (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
+          <>
             <OpenBook>
-              <Page 
-                className="left-page"
-                initial={{ rotateY: 90 }}
-                animate={{ rotateY: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <FigureContent>
-                  {getFiguresForCategory(selectedCategory)[currentPage * 2] && (
-                    <>
-                      <motion.img
-                        src={getFiguresForCategory(selectedCategory)[currentPage * 2].image}
-                        alt={getFiguresForCategory(selectedCategory)[currentPage * 2].name}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.3 }}
-                        onError={(e) => {
-                          e.target.src = 'https://via.placeholder.com/400x300?text=Image+Not+Available';
-                        }}
-                      />
-                      <motion.h3
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                      >
-                        {getFiguresForCategory(selectedCategory)[currentPage * 2].name}
-                      </motion.h3>
-                      <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.5 }}
-                      >
-                        {getFiguresForCategory(selectedCategory)[currentPage * 2].description}
-                      </motion.p>
-                    </>
-                  )}
-                </FigureContent>
-              </Page>
-              <Page 
-                className="right-page"
-                initial={{ rotateY: -90 }}
-                animate={{ rotateY: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <FigureContent>
-                  {getFiguresForCategory(selectedCategory)[currentPage * 2 + 1] && (
-                    <>
-                      <motion.img
-                        src={getFiguresForCategory(selectedCategory)[currentPage * 2 + 1].image}
-                        alt={getFiguresForCategory(selectedCategory)[currentPage * 2 + 1].name}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.3 }}
-                        onError={(e) => {
-                          e.target.src = 'https://via.placeholder.com/400x300?text=Image+Not+Available';
-                        }}
-                      />
-                      <motion.h3
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                      >
-                        {getFiguresForCategory(selectedCategory)[currentPage * 2 + 1].name}
-                      </motion.h3>
-                      <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.5 }}
-                      >
-                        {getFiguresForCategory(selectedCategory)[currentPage * 2 + 1].description}
-                      </motion.p>
-                    </>
-                  )}
-                </FigureContent>
-              </Page>
+              {[0,1].map((side) => {
+                const index = currentPage * 2 + side;
+                const item = getFigures(selectedCategory)[index];
+                return (
+                  <Page
+                    key={side}
+                    className={side === 0 ? 'left-page' : 'right-page'}
+                    initial={{ rotateY: side===0?90:-90 }}
+                    animate={{ rotateY: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    {item && (
+                      <FigureContent>
+                        <motion.img
+                          src={item.image}
+                          alt={item.name}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: 0.3 }}
+                          onError={(e) => e.target.src = 'https://via.placeholder.com/400x300?text=No+Image'}
+                        />
+                        <motion.h3 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
+                          {item.name}
+                        </motion.h3>
+                        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
+                          {item.description}
+                        </motion.p>
+                      </FigureContent>
+                    )}
+                  </Page>
+                );
+              })}
             </OpenBook>
             <NavigationButtons>
-              <NavButton
-                onClick={handlePrevPage}
-                disabled={currentPage === 0}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                ← Previous Page
-              </NavButton>
-              <NavButton
-                onClick={handleCloseBook}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Close Book
-              </NavButton>
-              <NavButton
-                onClick={handleNextPage}
-                disabled={currentPage >= Math.floor(getFiguresForCategory(selectedCategory).length / 2) - 1}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Next Page →
-              </NavButton>
+              <NavButton onClick={prevPage} disabled={currentPage===0} whileHover={{ scale:1.05 }} whileTap={{ scale:0.95 }}>← Prev</NavButton>
+              <NavButton onClick={closeBook} whileHover={{ scale:1.05 }} whileTap={{ scale:0.95 }}>Close</NavButton>
+              <NavButton onClick={nextPage} disabled={currentPage >= Math.ceil(getFigures(selectedCategory).length/2)-1} whileHover={{ scale:1.05 }} whileTap={{ scale:0.95 }}>Next →</NavButton>
             </NavigationButtons>
-          </motion.div>
+          </>
         )}
       </AnimatePresence>
     </Container>

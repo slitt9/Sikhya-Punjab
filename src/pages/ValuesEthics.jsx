@@ -1,11 +1,7 @@
+import ValuesTree from '../components/ValuesTree';
 
 const ValuesEthics = () => {
-  return (
-    <div>
-      <h1>Values & Ethics</h1>
-      <p>Understand the importance of values and ethics in Punjabi culture.</p>
-    </div>
-  );
+  return <ValuesTree />;
 };
 
 export default ValuesEthics;

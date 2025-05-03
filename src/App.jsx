@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Home from "./components/Home";
+import CardGrid from "./components/CardGrid";
 import LessonsSpeaking from "./pages/LessonsSpeaking";
 import LessonsReading from "./pages/LessonsReading";
 import ImportantFigures from "./pages/ImportantFigures";
@@ -13,7 +15,15 @@ const App = () => {
         <Router>
             <Navbar />
             <Routes>
-                <Route path="/" element={<Hero />} />
+            <Route
+    path="/"
+    element={
+      <>
+        <Hero />
+        <CardGrid />
+      </>
+    }
+  />
                 <Route path="/lessons-speaking" element={<LessonsSpeaking />} />
                 <Route path="/lessons-reading" element={<LessonsReading />} />
                 <Route path="/important-figures" element={<ImportantFigures />} />
