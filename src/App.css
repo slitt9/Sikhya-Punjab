@@ -1,0 +1,172 @@
+/* Fix general page spacing for alignment with navbar */
+.header {
+  text-align: center;
+  margin: 0;
+  padding: 1rem; /* Proper padding for header content */
+}
+
+/* Fixed animated title height and ensured no text cutoff */
+.animated-title {
+  font-family: 'Manrope', serif; /* Dancing Script applied */
+  font-size: 3rem;
+  position: relative;
+  height: 4.5rem; /* Slightly increased height for Punjabi font */
+  overflow: hidden; /* Prevent text overflow */
+  line-height: 1.5; /* Ensures vertical centering and adequate space */
+}
+
+.animated-title span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out; /* Smooth animation */
+  font-weight: bold;
+}
+
+.animated-title.english-show .english {
+  transform: translateY(0); /* Slide in the English text */
+}
+
+.animated-title.english-show .punjabi {
+  transform: translateY(-100%); /* Slide out Punjabi */
+}
+
+.animated-title.punjabi-show .english {
+  transform: translateY(100%); /* Slide out English */
+}
+
+.animated-title.punjabi-show .punjabi {
+  transform: translateY(0); /* Slide in Punjabi */
+}
+
+/* Punjabi-specific font styling */
+.punjabi {
+  font-family: "Punjabi", serif;
+  font-size: 3.2rem; /* Ensures proper scaling */
+}
+
+/* Subtitle under the title */
+.subtitle {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #ffffff;
+}
+
+/* Center SakhiOfTheDay component horizontally */
+.sakhi-container {
+  max-width: 800px; /* Limit the width for readability */
+  margin: 0 auto; /* Horizontally center the container */
+  text-align: center; /* Center the text inside the container */
+  padding: 1rem; /* Add some padding for spacing */
+}
+
+#sakhi-section {
+  min-height: 100vh; /* Full screen height for consistency */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  text-align: center;
+  padding: 2rem;
+  animation: fadeIn 0.8s ease-in-out; /* Optional: Add fade-in animation */
+  opacity: 0; /* Initially hidden */
+  transform: translateY(100px); /* Slightly move downward initially */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
+
+}
+
+#sakhi-section.show-section {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Move to its normal position */
+}
+
+
+#sakhi-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1976d2; /* A nice accent color */
+}
+
+#sakhi-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #444;
+  max-width: 700px; /* Limit width for better readability */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.home-container {
+  position: relative; /* Allows content to properly layer over the background */
+  min-height: 100vh; /* Ensures background covers the full height of the page */
+  background: url("./khandabackground.png") no-repeat center center fixed;  /* 'background': Adds the image
+     'no-repeat': Prevents repeating
+     'center center': Ensures the image is centered
+     'fixed': Keeps the background in place during scroll */
+  background-size: cover; /* Scales the image to fill the container */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content (if necessary) */
+  padding: 2rem 1rem; /* Adds spacing around content */
+}
+
+/* Space under navbar for content proper positioning */
+/* Panel for the header (title and subtitle) */
+.header-panel {
+  width: 100%;
+  background: linear-gradient(135deg, #0074D9, #FF851B); /* Punjab-inspired colors */
+  color: #ffffff;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-radius:0px;
+  margin: 0rem auto;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 1);
+}
+
+/* Panel for the Sakhi of the Day */
+.sakhi-panel {
+  background: #ffffff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  margin: 1rem auto;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid #1976d2; /* Accent-line for a modern touch */
+  color: #333; /* Dark text color for readability */
+}
+
+/* Styling for Sakhi card inside the panel */
+.sakhi-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #1976d2; /* Blue for consistency with the accent */
+}
+
+.sakhi-card p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Add spacing between main sections */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Spacing between panels */
+}
