@@ -1,52 +1,49 @@
-/* Navbar.css */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #1a1a1a;
-    padding: 0.5rem 1.5rem; /* Reduced padding for better alignment */
-    position: sticky; /* Sticky navbar always at the top */
+    padding: 0.5rem 1.5rem;
+    position: sticky;
     top: 0;
-    z-index: 1000; /* Ensures navbar stays above other content */
-    margin: 0; /* No additional margins */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Aesthetic shadow effect */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Clean border for separation */
-    overflow: hidden;
-    height: 60px; /* Set a fixed height for the navbar */
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    height: 60px;
+    flex-wrap: wrap;
 }
 
 .navbar .logo a {
     color: white;
-    font-size: 1.8rem; /* Slightly larger for better readability */
+    font-size: 1.8rem;
     font-weight: bold;
     text-decoration: none;
 }
 
 .logo-image {
-    height: 100px; /* Adjust the height of the logo to fit the navbar */
-    width: auto; /* Ensure the width scales proportionally */
-    max-height: 100%; /* Prevent it from exceeding the navbar's height */
-    display: block; /* Ensure it behaves like a block element */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth hover transition */
-    cursor: pointer; /* Show a "hand" cursor style */
-
+    height: 60px;
+    width: auto;
+    max-height: 100%;
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
 }
 
 .logo-image:hover {
-    transform: scale(1.1); /* Slightly enlarges the logo */
-    opacity: 0.9; /* Slightly reduce opacity for a subtle effect */
+    transform: scale(1.1);
+    opacity: 0.9;
 }
-
 
 .navbar ul {
     list-style-type: none;
     display: flex;
     margin: 0;
     padding: 0;
+    align-items: center;
 }
 
 .navbar ul li {
-    margin-left: 1.25rem; /* Creates spacing between nav items */
+    margin-left: 1rem;
 }
 
 .navbar ul li a {
@@ -58,7 +55,7 @@
 }
 
 .navbar ul li a:hover {
-    background-color: #646cff; /* Smooth hover effect */
+    background-color: #646cff;
     color: #ffffff;
 }
 
@@ -73,18 +70,33 @@
 }
 
 .navbar ul li button:hover {
-    background-color: #646cff; /* Matches navbar aesthetic */
+    background-color: #646cff;
     border-color: #646cff;
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        height: auto;
+    }
+
     .navbar ul {
-        flex-direction: column; /* Stack items on smaller screens */
+        flex-direction: column;
+        width: 100%;
         margin-top: 1rem;
     }
 
     .navbar ul li {
-        margin-left: 0;
+        margin: 0.5rem 0;
+        width: 100%;
+    }
+
+    .navbar ul li a,
+    .navbar ul li button {
+        display: block;
+        width: 100%;
+        text-align: left;
     }
 }
