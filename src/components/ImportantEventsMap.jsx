@@ -6,6 +6,11 @@ import ferozeImg      from '../assets/locations/feroze.jpg'
 import anandpurImg    from '../assets/locations/anandpur.jpg'
 import greenrevoImg   from '../assets/locations/greenrevo.png'
 import jallianwalaImg from '../assets/locations/jallianwala.jpg'
+import React, { useState } from 'react'
+import styled, { keyframes } from 'styled-components'
+import { motion, AnimatePresence } from 'framer-motion'
+import punjabMap from '../assets/punjab-map.jpg'
+
 
 const RAW_EVENTS = [
   {
