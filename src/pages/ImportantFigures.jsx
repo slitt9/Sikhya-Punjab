@@ -1,10 +1,9 @@
-// src/components/ImportantFigures.jsx
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styled, { createGlobalStyle } from 'styled-components';
 import figuresData from './important_punjabi_figures.json';
 
-// Global styles (if needed)
 const GlobalStyle = createGlobalStyle`
   /* Global nav or body styles can go here */
 `;
