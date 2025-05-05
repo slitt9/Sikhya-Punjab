@@ -1,69 +1,104 @@
-// src/components/ImportantEventsMap.jsx
-import React, { useState } from 'react'
-import styled, { keyframes } from 'styled-components'
-import { motion, AnimatePresence } from 'framer-motion'
-import punjabMap from '../assets/punjab-map.jpg'  
+import farmersImg     from '../assets/locations/farmers.jpg'
+import bluestarImg    from '../assets/locations/bluestar.jpg'
+import wagahImg       from '../assets/locations/wagah.jpg'
+import saragarhiImg   from '../assets/locations/saragarhi.jpg'
+import ferozeImg      from '../assets/locations/feroze.jpg'
+import anandpurImg    from '../assets/locations/anandpur.jpg'
+import greenrevoImg   from '../assets/locations/greenrevo.png'
+import jallianwalaImg from '../assets/locations/jallianwala.jpg'
 
 const RAW_EVENTS = [
   {
-    id: 1, name: 'Farmers Protest', year: 2020, location: 'Delhi Border',
-    x: 85, y: 75,
-    image: '/locations/farmers.jpg',
+    id: 1,
+    name: 'Farmers Protest',
+    year: 2020,
+    location: 'Delhi Border',
+    x: 85,
+    y: 75,
+    image: farmersImg,
     description: `Beginning in late 2020, over a million farmers—mostly from Punjab—camped at Delhi’s borders demanding repeal of three agricultural laws. Their peaceful, year-long sit-in forced India’s first major legislative U-turn, underscoring the power of non-violent protest.`,
     category: 'Social'
   },
   {
-    id: 2, name: 'Operation Blue Star', year: 1984, location: 'Golden Temple, Amritsar',
-    x: 34, y: 31,
-    image: '/locations/bluestar.jpg',
+    id: 2,
+    name: 'Operation Blue Star',
+    year: 1984,
+    location: 'Golden Temple, Amritsar',
+    x: 34,
+    y: 31,
+    image: bluestarImg,
     description: `In June 1984, the Indian Army stormed the Golden Temple complex to remove armed militants, resulting in heavy casualties and damage to Sikhism’s holiest shrine. The operation fueled deep communal divides, led to Indira Gandhi’s assassination, and sparked anti-Sikh riots.`,
     category: 'Military'
   },
   {
-    id: 3, name: 'Partition of Punjab', year: 1947, location: 'Wagah Border',
-    x: 24, y: 27,
-    image: '/locations/wagah.jpg',
+    id: 3,
+    name: 'Partition of Punjab',
+    year: 1947,
+    location: 'Wagah Border',
+    x: 24,
+    y: 27,
+    image: wagahImg,
     description: `At independence in August 1947, Punjab was split between India and Pakistan, triggering one of history’s largest migrations. Millions of Hindus, Sikhs, and Muslims crossed amid communal violence, permanently altering the region’s demographics.`,
     category: 'Political'
   },
   {
-    id: 4, name: 'Battle of Saragarhi', year: 1897, location: 'Saragarhi (NW Frontier)',
-    x: 36, y: 16,
-    image: '/locations/saragarhi.jpg',
+    id: 4,
+    name: 'Battle of Saragarhi',
+    year: 1897,
+    location: 'Saragarhi (NW Frontier)',
+    x: 36,
+    y: 16,
+    image: saragarhiImg,
     description: `On September 12, 1897, 21 soldiers of the 36th Sikh Regiment heroically defended the Saragarhi outpost against thousands of Afghan tribesmen. Their final stand lives on in military lore and is celebrated each year.`,
     category: 'Military'
   },
   {
-    id: 5, name: 'First Anglo-Sikh War', year: 1845, location: 'Ferozepur',
-    x: 25, y: 54,
-    image: '/locations/feroze.jpg',
+    id: 5,
+    name: 'First Anglo-Sikh War',
+    year: 1845,
+    location: 'Ferozepur',
+    x: 25,
+    y: 54,
+    image: ferozeImg,
     description: `Between 1845–46, the Sikh Empire clashed with the British East India Company over territory and succession. Despite fierce cavalry charges, the war ended with the Treaty of Lahore and ushered in British rule.`,
     category: 'Military'
   },
   {
-    id: 6, name: 'Foundation of Khalsa', year: 1699, location: 'Anandpur Sahib',
-    x: 84, y: 50,
-    image: '/locations/anandpur.jpg',
+    id: 6,
+    name: 'Foundation of Khalsa',
+    year: 1699,
+    location: 'Anandpur Sahib',
+    x: 84,
+    y: 50,
+    image: anandpurImg,
     description: `On Vaisakhi, April 13 1699, Guru Gobind Singh Ji baptized the first five Khalsa “Panj Pyare,” formalizing a community dedicated to justice and service. The Khalsa’s initiation rites and Five Ks remain central to Sikh identity.`,
     category: 'Religious'
   },
   {
-    id: 7, name: 'Green Revolution', year: 1960, location: 'Ludhiana',
-    x: 61, y: 55,
-    image: '/locations/greenrevo.png',
+    id: 7,
+    name: 'Green Revolution',
+    year: 1960,
+    location: 'Ludhiana',
+    x: 61,
+    y: 55,
+    image: greenrevoImg,
     description: `Starting in the 1960s, Punjab adopted high-yield seeds, modern irrigation, and fertilizers. While yields soared—earning Punjab the “Breadbasket of India”—this transformation also brought environmental and socio-economic challenges.`,
     category: 'Economic'
   },
   {
-    id: 8, name: 'Jallianwala Bagh Massacre', year: 1919, location: 'Jallianwala Bagh, Amritsar',
-    x: 32, y: 29,
-    image: '/locations/jallianwala.jpg',
+    id: 8,
+    name: 'Jallianwala Bagh Massacre',
+    year: 1919,
+    location: 'Jallianwala Bagh, Amritsar',
+    x: 32,
+    y: 29,
+    image: jallianwalaImg,
     description: `On April 13 1919, troops under Brigadier Dyer fired on unarmed protesters in Jallianwala Bagh, killing hundreds. The atrocity galvanized Indian public opinion and became a turning point in the independence movement.`,
     category: 'Historical'
   }
 ]
 
-const EVENTS = RAW_EVENTS.sort((a, b) => a.year - b.year)
+const EVENTS = [...RAW_EVENTS].sort((a,b) => a.year - b.year)
 
 /* ────────────────────────────────────────────────────────────────────────── */
 
