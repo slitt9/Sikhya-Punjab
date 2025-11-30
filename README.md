@@ -1,7 +1,7 @@
 # Sikhya Punjab
 
 A modern, interactive web application for learning the Punjabi language and exploring Punjabi culture and history. Built with React, Vite, Framer Motion, React Three Fiber, and styled-components.
-
+Conception during nwHacks 2025
 [Access at SikhyaPunjab.vercel.app](https://sikhyapunjab.vercel.app)
 
 ---
